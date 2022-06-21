@@ -1,0 +1,200 @@
+.webniarPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0;
+  .area1 {
+    width: 100%;
+  }
+
+  .area2 {
+    background-color: #f7fff6;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 100px 20px;
+    text-align: center;
+
+    h1 {
+      @include ubuntu-48-bold();
+      width: 50%;
+    }
+
+    .webniarInfoRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      margin: 50px 0px;
+
+      .webniarInfo {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        min-height: 100px;
+        text-align: start;
+        max-width: 400px;
+
+        img {
+          width: 28px;
+          height: auto;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          padding-left: 10px;
+          padding-top: 3px;
+
+          h2 {
+            @include ubuntu-24-bold();
+            margin-bottom: 10px;
+          }
+
+          p {
+            @include ubuntu-14-lighter($line-height: 21px);
+            line-height: 25px;
+          }
+        }
+      }
+    }
+
+    a {
+      @include button-or-a($type: "light");
+    }
+  }
+
+  .area3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 130px 20px;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 80%;
+      margin-bottom: 30px;
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          width: 200px;
+          //   border: 1px solid black;
+
+          h2 {
+            @include ubuntu-24-bold();
+            margin: 5px 0;
+          }
+          p {
+            @include ubuntu-16-lighter($line-height: 24px);
+            margin: 5px 0;
+          }
+
+          img {
+            width: 65px;
+            height: auto;
+            margin: 5px 0;
+            &:nth-child(1) {
+              width: 60px;
+            }
+            &:nth-child(4) {
+              width: 55px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    @include button-or-a($type: "dark");
+  }
+}
+
+@media (max-width: 900px) {
+  .webniarPage {
+    .area2 {
+      h1 {
+        @include ubuntu-36-bold();
+      }
+    }
+    .area3 {
+      div {
+        div {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .webniarPage {
+    .area2 {
+      h1 {
+        width: 80%;
+        margin-bottom: 40px;
+      }
+      .webniarInfoRow {
+        flex-direction: column;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .webniarPage {
+    .area2 {
+      h1 {
+        width: 80%;
+        margin-bottom: 40px;
+        @include ubuntu-24-bold();
+      }
+      .webniarInfoRow {
+        flex-direction: column;
+        margin: 0;
+        .webniarInfo {
+          div {
+            h2 {
+              @include ubuntu-16-bold();
+            }
+            p {
+              @include ubuntu-12-lighter($line-height: 18px);
+            }
+          }
+        }
+      }
+    }
+
+    .area3 {
+      div {
+        flex-direction: column;
+        div {
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+}

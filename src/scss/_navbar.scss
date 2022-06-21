@@ -1,0 +1,138 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+
+  .navbar-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 400px;
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 50px;
+        .navbar-link-line {
+          height: 3px;
+          background-color: #000033;
+          border-radius: 3px;
+        }
+
+        a {
+          @include ubuntu-14-lighter();
+          color: #000033;
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+    .contact-us-link {
+      @include ubuntu-16-lighter();
+      width: 150px;
+      height: 50px;
+      border: 2px solid #029837;
+      border-radius: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #029837;
+      margin-left: 20px;
+    }
+  }
+}
+.burger-icon {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .burger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 36px;
+    align-self: center;
+    justify-self: center;
+    width: 65px;
+    height: 50px;
+    div {
+      width: 50px;
+      height: 8px;
+      border-radius: 8px;
+      background-color: #029837;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .hamburger {
+    position: absolute;
+    display: none;
+    // display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    @include ubuntu-14-lighter();
+    color: #000033;
+    background-color: #fff;
+    padding-bottom: 10px;
+    z-index: 1000;
+
+    .contact-us-link {
+      width: 100px;
+      height: 40px;
+      border: 1px solid #029837;
+      border-radius: 15px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #029837;
+      @include ubuntu-16-lighter();
+      align-self: center;
+    }
+    div {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 250px;
+      height: 40px;
+      a {
+        color: #000033;
+      }
+
+      .hamburger-link-line {
+        width: 50px;
+        height: 3px;
+        background-color: #000033;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .navbar {
+    .navbar-right {
+      display: none;
+    }
+  }
+}
